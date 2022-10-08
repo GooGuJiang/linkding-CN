@@ -2,10 +2,10 @@
   <form action="" method="get" role="search">
     <div class="input-group">
             <span id="search-input-wrap">
-                <input type="search" class="form-input" name="q" placeholder="Search for words or #tags"
+                <input type="search" class="form-input" name="q" placeholder="搜索 关键词 或 #标签"
                        value="{{ filters.query }}">
             </span>
-      <input type="submit" value="Search" class="btn input-group-btn">
+      <input type="submit" value="搜索" class="btn input-group-btn">
     </div>
     {% if filters.user %}
       <input type="hidden" name="user" value="{{ filters.user }}">
