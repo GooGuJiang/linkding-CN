@@ -61,7 +61,7 @@
           {% if bookmark.owner == request.user %}
             {# Bookmark owner actions #}
             <a href="{% url 'bookmarks:edit' bookmark.id %}?return_url={{ return_url }}"
-               class="btn btn-link btn-sm">Edit</a>
+               class="btn btn-link btn-sm">编辑</a>
             {% if bookmark.is_archived %}
               <button type="submit" name="unarchive" value="{{ bookmark.id }}"
                       class="btn btn-link btn-sm">移出归档
@@ -82,7 +82,7 @@
             {% endif %}
           {% else %}
             {# Shared bookmark actions #}
-            <span class="text-gray text-sm">Shared by
+            <span class="text-gray text-sm">分享来自
               <a class="text-gray"
                  href="?{% replace_query_param user=bookmark.owner.username %}">{{ bookmark.owner.username }}</a>
             </span>
