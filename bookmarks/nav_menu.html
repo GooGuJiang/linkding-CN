@@ -15,26 +15,26 @@
     </a>
     <ul class="menu">
       <li>
-        <a href="{% url 'bookmarks:index' %}" class="btn btn-link">Active</a>
+        <a href="{% url 'bookmarks:index' %}" class="btn btn-link">书签</a>
       </li>
       <li>
-        <a href="{% url 'bookmarks:archived' %}" class="btn btn-link">Archived</a>
+        <a href="{% url 'bookmarks:archived' %}" class="btn btn-link">归档书签</a>
       </li>
       {% if request.user.profile.enable_sharing %}
         <li>
-          <a href="{% url 'bookmarks:shared' %}" class="btn btn-link">Shared</a>
+          <a href="{% url 'bookmarks:shared' %}" class="btn btn-link">分享</a>
         </li>
       {% endif %}
       <li>
-        <a href="{% url 'bookmarks:index' %}?q=!unread" class="btn btn-link">Unread</a>
+        <a href="{% url 'bookmarks:index' %}?q=!unread" class="btn btn-link">未读书签</a>
       </li>
       <li>
-        <a href="{% url 'bookmarks:index' %}?q=!untagged" class="btn btn-link">Untagged</a>
+        <a href="{% url 'bookmarks:index' %}?q=!untagged" class="btn btn-link">未标记书签</a>
       </li>
     </ul>
   </div>
-  <a href="{% url 'bookmarks:settings.index' %}" class="btn btn-link">Settings</a>
-  <a href="{% url 'logout' %}" class="btn btn-link">Logout</a>
+  <a href="{% url 'bookmarks:settings.index' %}" class="btn btn-link">设置</a>
+  <a href="{% url 'logout' %}" class="btn btn-link">登出</a>
 </div>
 {# Menu drop-down for smaller devices #}
 <div class="show-md">
@@ -54,27 +54,27 @@
     <!-- menu component -->
     <ul class="menu">
       <li>
-        <a href="{% url 'bookmarks:index' %}" class="btn btn-link">Bookmarks</a>
+        <a href="{% url 'bookmarks:index' %}" class="btn btn-link">书签</a>
       </li>
       <li style="padding-left: 1rem">
-        <a href="{% url 'bookmarks:archived' %}" class="btn btn-link">Archived</a>
+        <a href="{% url 'bookmarks:archived' %}" class="btn btn-link">归档书签</a>
       </li>
       {% if request.user.profile.enable_sharing %}
         <li style="padding-left: 1rem">
-          <a href="{% url 'bookmarks:shared' %}" class="btn btn-link">Shared</a>
+          <a href="{% url 'bookmarks:shared' %}" class="btn btn-link">分享</a>
         </li>
       {% endif %}
       <li style="padding-left: 1rem">
-        <a href="{% url 'bookmarks:index' %}?q=!unread" class="btn btn-link">Unread</a>
+        <a href="{% url 'bookmarks:index' %}?q=!unread" class="btn btn-link">未读书签</a>
       </li>
       <li style="padding-left: 1rem">
-        <a href="{% url 'bookmarks:index' %}?q=!untagged" class="btn btn-link">Untagged</a>
+        <a href="{% url 'bookmarks:index' %}?q=!untagged" class="btn btn-link">未标记书签</a>
       </li>
       <li>
-        <a href="{% url 'bookmarks:settings.index' %}" class="btn btn-link">Settings</a>
+        <a href="{% url 'bookmarks:settings.index' %}" class="btn btn-link">设置</a>
       </li>
       <li>
-        <a href="{% url 'logout' %}" class="btn btn-link">Logout</a>
+        <a href="{% url 'logout' %}" class="btn btn-link">登出</a>
       </li>
     </ul>
   </div>
