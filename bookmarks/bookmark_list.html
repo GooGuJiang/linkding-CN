@@ -64,20 +64,20 @@
                class="btn btn-link btn-sm">Edit</a>
             {% if bookmark.is_archived %}
               <button type="submit" name="unarchive" value="{{ bookmark.id }}"
-                      class="btn btn-link btn-sm">Unarchive
+                      class="btn btn-link btn-sm">移出归档
               </button>
             {% else %}
               <button type="submit" name="archive" value="{{ bookmark.id }}"
-                      class="btn btn-link btn-sm">Archive
+                      class="btn btn-link btn-sm">归档
               </button>
             {% endif %}
             <button type="submit" name="remove" value="{{ bookmark.id }}"
-                    class="btn btn-link btn-sm btn-confirmation">Remove
+                    class="btn btn-link btn-sm btn-confirmation">删除
             </button>
             {% if bookmark.unread %}
               <span class="text-gray text-sm">|</span>
               <button type="submit" name="mark_as_read" value="{{ bookmark.id }}"
-                      class="btn btn-link btn-sm">Mark as read
+                      class="btn btn-link btn-sm">标记为已读
               </button>
             {% endif %}
           {% else %}
