@@ -2,15 +2,9 @@
   <p class="empty-title h5">这里没有书签</p>
   <p class="empty-subtitle">
     <div>
-    您可以: 
-      <br>
-      <li>
-      <a href="{% url 'bookmarks:new' %}">新建书签</a> 或 <a href="{% url 'bookmarks:settings.general' %}">导入</a> 书签来使用。
-    </li>
-      <li>
-      通过 <a href="{% url 'bookmarks:settings.integrations' %}">插件</a> 来导入 <a
+    您可以: <a href="{% url 'bookmarks:new' %}">新建书签</a> 或 <a href="{% url 'bookmarks:settings.general' %}">导入</a> 书签来使用,
+      通过 <a href="{% url 'bookmarks:settings.integrations' %}">浏览器插件</a> 来导入 <a
       href="{% url 'bookmarks:settings.integrations' %}">浏览器中的书签</a>
-      </li>
     </div>
   </p>
 </div>
