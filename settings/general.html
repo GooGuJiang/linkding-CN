@@ -8,56 +8,54 @@
 
     {# Profile section #}
     <section class="content-area">
-      <h2>Profile</h2>
+      <h2>个人设置</h2>
       <p>
-        <a href="{% url 'change_password' %}">Change password</a>
+        <a href="{% url 'change_password' %}">修改密码</a>
       </p>
       <form action="{% url 'bookmarks:settings.general' %}" method="post" novalidate>
         {% csrf_token %}
         <div class="form-group">
-          <label for="{{ form.theme.id_for_label }}" class="form-label">Theme</label>
+          <label for="{{ form.theme.id_for_label }}" class="form-label">主题</label>
           {{ form.theme|add_class:"form-select col-2 col-sm-12" }}
           <div class="form-input-hint">
-            Whether to use a light or dark theme, or automatically adjust the theme based on your system's settings.
+            是否使用浅色(Light)或深色(Dark)主题,或根据你的系统设置自动(Auto)调整主题。
           </div>
         </div>
         <div class="form-group">
-          <label for="{{ form.bookmark_date_display.id_for_label }}" class="form-label">Bookmark date format</label>
+          <label for="{{ form.bookmark_date_display.id_for_label }}" class="form-label">书签日期格式</label>
           {{ form.bookmark_date_display|add_class:"form-select col-2 col-sm-12" }}
           <div class="form-input-hint">
-            Whether to show bookmark dates as relative (how long ago), or as absolute dates. Alternatively the date can
-            be hidden.
+            是否将书签日期显示为相对(Relative)日期(多久以前)，或显示为绝对(Absolute)日期。
+            另外，也可以隐藏(Hidden)日期。
           </div>
         </div>
         <div class="form-group">
-          <label for="{{ form.bookmark_link_target.id_for_label }}" class="form-label">Open bookmarks in</label>
+          <label for="{{ form.bookmark_link_target.id_for_label }}" class="form-label">打开书签方式</label>
           {{ form.bookmark_link_target|add_class:"form-select col-2 col-sm-12" }}
           <div class="form-input-hint">
-            Whether to open bookmarks a new page or in the same page.
+            是否在新的页面(New age)或在同一页面(Same page)打开书签。
           </div>
         </div>
         <div class="form-group">
-          <label for="{{ form.web_archive_integration.id_for_label }}" class="form-label">Internet Archive
-            integration</label>
+          <label for="{{ form.web_archive_integration.id_for_label }}" class="form-label">互联网档案馆(Internet Archive)
+            功能</label>
           {{ form.web_archive_integration|add_class:"form-select col-2 col-sm-12" }}
           <div class="form-input-hint">
-            Enabling this feature will automatically create snapshots of bookmarked websites on the <a
-              href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive Wayback
-            Machine</a>.
-            This allows to preserve, and later access the website as it was at the point in time it was bookmarked, in
-            case it goes offline or its content is modified.
-            Please consider donating to the <a href="https://archive.org/donate/index.php" target="_blank"
-                                               rel="noopener">Internet Archive</a> if you make use of this feature.
+            启用此功能将自动在 <a
+              href="https://web.archive.org/" target="_blank" rel="noopener">互联网档案馆</a>中创建书签网站的快照。
+              这会将添加书签时的网页快照提交至互联网博物馆,以防止网站服务器关闭或其内容被修改。
+              如果您使用此功能,可以考虑向 <a href="https://archive.org/donate/index.php" target="_blank"
+                                               rel="noopener">互联网档案馆(Internet Archive)</a> 捐款。
           </div>
         </div>
         <div class="form-group">
           <label for="{{ form.enable_sharing.id_for_label }}" class="form-checkbox">
             {{ form.enable_sharing }}
-            <i class="form-icon"></i> Enable bookmark sharing
+            <i class="form-icon"></i> 启用书签共享
           </label>
           <div class="form-input-hint">
-            Allows to share bookmarks with other users, and to view shared bookmarks.
-            Disabling this feature will hide all previously shared bookmarks from other users.
+            允许与其他用户共享书签，以及查看共享书签。
+            禁用此功能将对其他用户隐藏所有以前共享的书签。
           </div>
         </div>
         <div class="form-group">
@@ -68,9 +66,8 @@
 
     {# Import section #}
     <section class="content-area">
-      <h2>Import</h2>
-      <p>Import bookmarks and tags in the Netscape HTML format. This will execute a sync where new bookmarks are
-        added and existing ones are updated.</p>
+      <h2>导入书签</h2>
+      <p>以 Netscape HTML 格式导入书签和标签。 这将会执行添加新书签和更新现有书签的信息。</p>
       <form method="post" enctype="multipart/form-data" action="{% url 'bookmarks:settings.import' %}">
         {% csrf_token %}
         <div class="form-group">
@@ -98,9 +95,9 @@
 
     {# Export section #}
     <section class="content-area">
-      <h2>Export</h2>
-      <p>Export all bookmarks in Netscape HTML format.</p>
-      <a class="btn btn-primary" href="{% url 'bookmarks:settings.export' %}">Download (.html)</a>
+      <h2>导出书签</h2>
+      <p>以 Netscape HTML 格式导出所有书签。</p>
+      <a class="btn btn-primary" href="{% url 'bookmarks:settings.export' %}">导出书签 (.html)</a>
       {% if export_error %}
         <div class="has-error">
           <p class="form-input-hint">
@@ -112,25 +109,29 @@
 
     {# About section #}
     <section class="content-area about">
-      <h2>About</h2>
+      <h2>关于 LINKDING</h2>
       <table class="table">
         <tbody>
         <tr>
-          <td>Version</td>
+          <td>版本</td>
           <td>{{ version_info }}</td>
         </tr>
         <tr>
-          <td rowspan="3" style="vertical-align: top">Links</td>
+          <td rowspan="3" style="vertical-align: top">友情链接</td>
           <td><a href="https://github.com/sissbruecker/linkding/"
                  target="_blank">GitHub</a></td>
         </tr>
         <tr>
           <td><a href="https://github.com/sissbruecker/linkding#documentation"
-                 target="_blank">Documentation</a></td>
+                 target="_blank">文档</a></td>
         </tr>
         <tr>
           <td><a href="https://github.com/sissbruecker/linkding/blob/master/CHANGELOG.md"
-                 target="_blank">Changelog</a></td>
+                 target="_blank">更新日志</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/GooGuJiang/linkding-CN"
+                 target="_blank">LINKDING 汉化 By:咕谷酱</a></td>
         </tr>
         </tbody>
       </table>
