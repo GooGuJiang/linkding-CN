@@ -66,7 +66,7 @@
     {# Import section #}
     <section class="content-area">
       <h2>导入书签</h2>
-      <p>以 Netscape HTML 格式导入书签和标签。 这将会执行添加新书签和更新现有书签的信息。</p>
+      <p>以 Netscape HTML 格式导入书签。 此操作会添加新书签和更新现有书签的信息。</p>
       <form method="post" enctype="multipart/form-data" action="{% url 'bookmarks:settings.import' %}">
         {% csrf_token %}
         <div class="form-group">
